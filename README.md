@@ -31,6 +31,16 @@ cd fireboom-init
 http://localhost:9123
 ```
 
+## 调试钩子
+
+1. 前往配置修改钩子的启动模式为默认不启动（TODO:待实现该配置）
+
+2. 打开./wundergraph/package.json 文件
+
+3. 鼠标悬浮在 scripts.hook 上，点击`调试脚本`
+
+4. 前往 wundergraph/.wundergraph/generated/bundle/server.js 中打断点
+
 ## 更新
 
 ```shell
@@ -124,6 +134,8 @@ export default async function mutatingPostResolve(
 [ ] 优化目录结构
 
     [ ] OIDC 相关的目录整理在一起（如 oauth_default.db 和 oidc、oauth 等）
+
+    [ ] fireBooom-DB和static/config以及static/operateapi等合并在一起？
 
 [ ] 提供前端示例（启动后用来走完整的登录鉴权逻辑）
 

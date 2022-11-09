@@ -13,8 +13,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "baseUrl": "./",
     "paths": {
-      "baseUrl": "./",
       "generated/*": [".wundergraph/generated/*"]
     }
   },

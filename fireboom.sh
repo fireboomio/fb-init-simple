@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# writen by https://github.com/erguotou520
+
 function install() {
   type yarn
   if [ $? -eq 0 ]; then
@@ -45,26 +47,20 @@ function init() {
 }
 
 function update() {
-  download_wunderctl
+#   download_wunderctl
   download_fireboom
   download_front
 }
 
 function ensure_bin_exist() {
   type wunderctl
-  if [ $? -eq 0 ]; then
-    :
-  else
+  if [ ! $? -eq 0 ]; then
     download_wunderctl
   fi
-  if [ -f "./fireboom" ]; then
-    :
-  else
+  if [ ! -f "./fireboom" ]; then
     download_fireboom
   fi
-  if [ -d "./static/front" ]; then
-    :
-  else
+  if [ ! -d "./static/front" ]; then
     download_front
   fi
 }

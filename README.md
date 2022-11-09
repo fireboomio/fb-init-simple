@@ -7,7 +7,7 @@
 ## 安装
 
 ```shell
-git clone https://github.com/sx19990201/fireboom-init.git
+git clone https://github.com/fireboomio/fb-init-simple.git
 cd fireboom-init
 ./fireboom.sh init
 ```
@@ -45,15 +45,77 @@ http://localhost:9123
 
 ## 快速使用
 
-1. 设置数据源
+### 1. 设置数据源
 
-2. 新建 API
+- 数据源
+  - GraphQL: https://countries.trevorblades.com
 
-3. 扩展 API
+### 2. 新建 API
 
-4. 身份验证
+API 名称：GetCountry
 
-5. 角色鉴权（待完善）
+```gql
+query MyQuery($code: ID!) @rbac(requireMatchAll: [REVIEWER]) {
+  country: countries_country(code: $code) {
+    capital
+    code
+    currency
+    emoji
+    emojiU
+    native
+    phone
+    name
+  }
+}
+```
+
+### 3. 扩展 API
+
+mutatingPostResolve.ts
+
+```typescript
+import type { Context } from "@wundergraph/sdk";
+import type { User } from "generated/wundergraph.server";
+import type { InternalClient } from "generated/wundergraph.internal.client";
+import { InjectedGetCountryInput, GetCountryResponse } from "generated/models";
+
+// 在左侧引入当前包
+import axios from "axios";
+
+export default async function mutatingPostResolve(
+  ctx: Context<User, InternalClient>,
+  input: InjectedGetCountryInput,
+  response: GetCountryResponse
+): Promise<GetCountryResponse> {
+  // TODO: 在此处添加代码
+  var country = response.data?.country;
+  if (country) {
+    country.phone = "fireboom/test"; //这里可以修改返回值
+  }
+  ctx.log.info("test");
+
+  //触发一个post请求，给企业机器人发送一个消息
+  var res = await axios.post(
+    "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=69aa957f-7c05-49b3-9e9d-8859a53ea692",
+    {
+      msgtype: "markdown",
+      markdown: {
+        content: `<font color="warning">${
+          ctx.clientRequest.method
+        }</font>/n输入：${JSON.stringify(input)}/n响应：${JSON.stringify(
+          response
+        )}`,
+      },
+    }
+  );
+  ctx.log.info("mutatingPostResolve SUCCESS:", res.data);
+  return response;
+}
+```
+
+### 4. 身份验证（待完善提供前端示例）
+
+### 5. 角色鉴权（待完善提供前端示例）
 
 ## TODO
 

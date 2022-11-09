@@ -6,7 +6,8 @@
     "start": "cd .wundergraph && wunderctl up --debug  --listen-addr 0.0.0.0:9991",
     "generate": "cd .wundergraph && wunderctl generate --debug",
     "wunderctl": "wunderctl",
-    "check": "tsc"
+    "check": "tsc",
+    "hook": "START_HOOKS_SERVER=true WG_ABS_DIR=.wundergraph node .wundergraph/generated/bundle/server.js"
   },
   "author": "",
   "license": "ISC",

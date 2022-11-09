@@ -30,6 +30,8 @@ wundergraph/.wundergraph/wundergraph.server.ts
 # WunderGraph build output
 wundergraph/.wundergraph/generated
 
+.graphqlconfig
+
 # dependencies
 wundergraph/node_modules
 wundergraph/.pnp
@@ -71,4 +73,5 @@ fireBoom-DB
 
 # bin files
 fireboom
+fb_test
 wunderctl

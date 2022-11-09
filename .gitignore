@@ -63,6 +63,7 @@ wundergraph/.env.test.local
 wundergraph/.env.production.local
 
 yarn.lock
+package-lock.json
 
 # vercel
 wundergraph/.vercel

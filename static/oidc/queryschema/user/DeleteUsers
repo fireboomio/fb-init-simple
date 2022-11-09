@@ -1,0 +1,1 @@
+mutation {  result:createManyoauth_user(    where: {id: {in: $ids}},    data: {is_del: {set: 1},update_time: {set: $updateTime}}) {    count}}

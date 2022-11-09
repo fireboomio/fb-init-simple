@@ -1,0 +1,13 @@
+{
+  "color": {
+    "primaryColor": "#6139F6",
+    "darkPrimaryColor": "",
+    "isDarkModeEnabled": false
+  },
+  "branding": {
+    "style": "",
+    "slogan": "https://logto.io/logo.svgs",
+    "logoUrl": "https://logto.io/logo.svg",
+    "darkLogoUrl": ""
+  }
+}

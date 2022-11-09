@@ -1,0 +1,72 @@
+[
+  {
+    "id": "aliyun-direct-mail",
+    "enabled": false,
+    "config": {},
+    "createdAt": 1660983464894,
+    "target": "aliyun-dm",
+    "types": "Email",
+    "platform": "",
+    "name": "阿里云邮件推送",
+    "logo": "www.baidu.com",
+    "logoDark": "",
+    "description": "阿里云是全球性的云服务提供商。",
+    "configTemplate": "{\n \"accessKeyId\":\"\u003caccess-key-id\u003e\",\n \"accessKeySecret\":\"\u003caccess-key-secret\u003e\",\n \"accountName\":\"\u003cverified-account-name\u003e\",\n \"fromAlias\":\"\u003cOPTIONAL-connector-alias\u003e\",\n \"templates\":[\n {\n \"usageType\":\"SignIn\",\n \"subject\":\"\u003csign-in-template-subject\u003e\",\n \"content\":\"\u003csign-in-template-content\u003e\"\n },\n {\n \"usageType\":\"Register\",\n \"subject\":\"\u003cregister-template-subject\u003e\",\n \"content\":\"\u003cregister-template-content\u003e\"\n },\n {\n \"usageType\":\"Test\",\n \"subject\":\"\u003ctest-template-subject\u003e\",\n \"content\":\"\u003ctest-template-content\u003e\"\n }\n ]\n}\n"
+  },
+  {
+    "id": "aliyun-short-message-service",
+    "enabled": false,
+    "config": {},
+    "createdAt": 1660983464892,
+    "target": "aliyun-sms",
+    "types": "Sms",
+    "platform": "",
+    "name": "阿里云短信服务",
+    "logo": "www.baidu.com",
+    "logoDark": "",
+    "description": "阿里云是全球性的云服务提供商。",
+    "configTemplate": "{\n \"accessKeyId\":\"\u003caccess-key-id\u003e\",\n \"accessKeySecret\":\"\u003caccess-key-secret\u003e\",\n \"signName\":\"\u003csign-name\u003e\",\n \"templates\":[\n {\n \"usageType\":\"SignIn\",\n \"templateCode\":\"\u003ctemplate-code\u003e\"\n },\n {\n \"usageType\":\"Register\",\n \"templateCode\":\"\u003ctemplate-code\u003e\"\n },\n {\n \"usageType\":\"Test\",\n \"templateCode\":\"\u003ctemplate-code\u003e\"\n }\n ]\n}\n"
+  },
+  {
+    "id": "github-universal",
+    "enabled": false,
+    "config": {},
+    "createdAt": 1660983464893,
+    "target": "github",
+    "types": "Social",
+    "platform": "Universal",
+    "name": "GitHub",
+    "logo": "www.baidu.com",
+    "logoDark": "",
+    "description": "GitHub 是极受欢迎的代码托管仓库。",
+    "configTemplate": "{\n \"clientId\":\"\u003cclient-id\u003e\",\n \"clientSecret\":\"\u003cclient-secret\u003e\"\n}\n"
+  },
+  {
+    "id": "wechat-web",
+    "enabled": false,
+    "config": {},
+    "createdAt": 1660983464891,
+    "target": "wechat",
+    "types": "Social",
+    "platform": "web",
+    "name": "微信",
+    "logo": "www.baidu.com",
+    "logoDark": "",
+    "description": "微信是一款跨平台的即时通讯软件。",
+    "configTemplate": "{\n \"appId\":\"\u003capp-id\u003e\",\n \"appSecret\":\"\u003capp-secret\u003e\"\n}\n"
+  },
+  {
+    "id": "wechat-native",
+    "enabled": false,
+    "config": {},
+    "createdAt": 1660983464891,
+    "target": "wechat",
+    "types": "Social",
+    "platform": "Native",
+    "name": "微信",
+    "logo": "www.baidu.com",
+    "logoDark": "",
+    "description": "微信是一款跨平台的即时通讯软件。",
+    "configTemplate": "{\n \"appId\":\"\u003capp-id\u003e\",\n \"appSecret\":\"\u003capp-secret\u003e\",\n \"universalLinks\":\"\u003coptional-universal-links\u003e\"\n}\n"
+  }
+]

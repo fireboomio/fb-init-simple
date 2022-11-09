@@ -1,0 +1,1 @@
+mutation {result: createOneoauth_user(data: {id: $id, email: $email, encryption_password: $encryPswd, user_name: $userName, mobile: $mobile,create_time:$createTime}){    id    name    nick_name    user_name    encryption_password    mobile    email    mate_data    last_login_time    status    create_time    update_time    is_del  }}

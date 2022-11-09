@@ -1,0 +1,1 @@
+{result:findManyoauth_user(where: {id:{in:$ids},is_del:{equals:0}}){id name user_name nick_name mobile email encryption_password mate_data status last_login_time create_time update_time is_del}}

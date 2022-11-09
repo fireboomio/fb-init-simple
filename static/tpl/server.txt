@@ -1,0 +1,11 @@
+import {GraphQLObjectType, GraphQLSchema, GraphQLString} from 'graphql';
+import {configureWunderGraphServer} from '@wundergraph/sdk';
+import type {AuthenticationResponse, HooksConfig} from './generated/wundergraph.hooks';
+import type {InternalClient} from './generated/wundergraph.internal.client';
+
+{{.ImportPath}}
+
+export default configureWunderGraphServer<HooksConfig, InternalClient>(() => ({
+   {{.HookContent}}
+
+}));

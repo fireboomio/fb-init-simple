@@ -1,0 +1,1 @@
+{ result: findFirstoauth_user(    where:{user_name:{equals:$userName},is_del:{equals:0}}  ){    id    name    nick_name    user_name    encryption_password    mobile    email    mate_data    last_login_time    status    create_time    update_time    is_del  }}

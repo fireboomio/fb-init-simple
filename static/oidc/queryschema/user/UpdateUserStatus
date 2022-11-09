@@ -1,0 +1,1 @@
+mutation {  result:updateManyoauth_user(    where: {id: {in: $ids}},    data: {status: {set: $status},update_time: {set: $updateTime}}) {    count}}

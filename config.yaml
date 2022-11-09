@@ -1,0 +1,81 @@
+debug: true
+server:
+  host: "localhost"
+  address: "9123"
+DB: "fireBoom-DB"
+context:
+  timeout: 10
+dir:
+  oidc:
+    path: "static/oidc/queryschema"
+  schema:
+    path: "static/schema"
+    dbPath: "static/schema/prismaDB"
+  sdk:
+    src: "static/sdk/src"
+    dst: "static/sdk/dst"
+  Hooks:
+    globalPrefix: "wundergraph/.wundergraph/new_hook/global"
+    authGlobalPrefix: "wundergraph/.wundergraph/new_hook/auth"
+    operationsPrefix: "wundergraph/.wundergraph/new_hook/operations"
+    customizePrefix: "wundergraph/.wundergraph/new_hook/customize"
+    newHookPath: "wundergraph/.wundergraph/new_hook"
+  uploadPath:
+    oasPath: "static/upload/oas"
+    sqlitePath: "wundergraph/.wundergraph"
+    swaggerPath: "static/upload/swagger"
+  ossUploadPath: "static/upload/oss"
+  operationsSettingPath:
+    operationPrefix: "static/operateapi/setting"
+  operateAPIPath:
+    prefix: "wundergraph/.wundergraph/operations"
+  wunderGraphPath:
+    generated: "wundergraph/.wundergraph/generated"
+  settingDirPath: "static/setting"
+  globalConfigDirPath: "static/config"
+  wdgLogDirPath: "static/log"
+  webStaticFront: "static/front"
+  tpldirPathFront: "static/tpl"
+  wdgStartDir: "wundergraph/.wundergraph"
+  draftPath: "static/draft"
+  HookTypeFilePath: "wundergraph/.wundergraph/generated"
+
+
+file:
+  indexDBIDJsonPath: "static/schema/index_db_id.json"
+  oauthLinkerPath: "static/oauth/linker.json"
+  oauthLinkerDefaultPath: "static/oauth/linker_default.json"
+  oauthLoginBrandPath: "static/oauth/login_brand.json"
+  oauthLoginConfigPath: "static/oauth/login_config.json"
+  oauthOauthConfigPath: "static/oauth/other_config.json"
+  moduleSchemaPath: "static/schema/module_schema.prisma"
+  defaultOauthDBPath : "static/oauth_default.db"
+  schemaPath: "schema.prisma"
+  database:
+    driverName: "sqlite3"
+    dataSourceName: "wundergraph/.wundergraph/fire_boom_v3.db"
+  Hooks:
+    suffix: ".ts"
+    configJsonSuffix: "_config.json"
+  operateAPIPath:
+    suffix: ".graphql"
+    switchOff: ".off"
+    switchOn: ""
+  operationsSettingPath:
+    globalPrefix: "static/operateapi/global_setting"
+  settingPath: "static/setting/setting.json"
+  globalConfigPath: "static/config/global_config.json"
+  logPath:
+    wdg: "static/log/wdg.txt"
+    hook: "static/log/hook.txt"
+  wunderGraphSyncer:
+    configTPL: "static/tpl/config.txt"
+    configFile: "wundergraph/.wundergraph/wundergraph.config.ts"
+    serverTPL: "static/tpl/server.txt"
+    serverFile: "wundergraph/.wundergraph/wundergraph.server.ts"
+    operationTPL: "static/tpl/operations.txt"
+    operationFile: "wundergraph/.wundergraph/wundergraph.operations.ts"
+  fileType:
+    json: "json"
+    yaml: "yaml"
+  wdgGeneratedPostmanPath: "wundergraph/.wundergraph/generated/wundergraph.postman.json"

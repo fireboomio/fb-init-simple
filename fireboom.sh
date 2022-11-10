@@ -2,6 +2,27 @@
 
 # writen by https://github.com/erguotou520
 
+
+
+function get_os_name() {
+  if [ "$(uname)" == "Darwin" ]; then
+    os_name="mac"
+  elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then   
+    os_name="linux"
+  elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then    
+    os_name="windows"
+  fi
+}
+
+get_os_name
+
+function get_os_bin_name() {
+  ctl_filename="$1-${os_name}"
+  if [ os_name == 'windows' ]; then
+    ctl_filename="${ctl_filename}.exe"
+  fi
+}
+
 function install() {
   type yarn
   if [ $? -eq 0 ]; then
@@ -12,13 +33,17 @@ function install() {
 }
 
 function download_wunderctl() {
-  curl -o wunderctl https://markdown-file-1259215954.cos.ap-nanjing.myqcloud.com/wunderctl
+  get_os_bin_name wunderctl
+  bin_url="https://markdown-file-1259215954.cos.ap-nanjing.myqcloud.com/${ctl_filename}"
+  curl -o wunderctl $bin_url
   chmod +x wunderctl
-  cp wunderctl /usr/local/bin/
+  sudo cp wunderctl /usr/local/bin/
 }
 
 function download_fireboom() {
-  curl -o fireboom https://markdown-file-1259215954.cos.ap-nanjing.myqcloud.com/fireboom
+  get_os_bin_name fireboom
+  bin_url="https://fireboom-test.oss-cn-hangzhou.aliyuncs.com/fireboom/bin/${ctl_filename}"
+  curl -o fireboom $bin_url
   chmod +x fireboom
 }
 

@@ -4,6 +4,8 @@
 
 飞布是下一代 API 开发平台，灵活开放、多语言兼容、简单易学，对标 Firebase，但无供应商锁定。 它帮助你构建生产级 WEB API，但无需花时间重复 coding。
 
+产品愿景：极致开发体验，`飞速布署`应用！
+
 [前往官网->](https://www.fireboom.io/)
 
 ## 为什么？
@@ -26,6 +28,10 @@
 ## 怎么做？
 
 针对上述问题，飞布采用完全不同的思路。飞布采用声明式开发方式，它以 API 为中心，将所有数据抽象为 API，包括 REST API，GraphQL API ，数据库甚至消息队列等，通过统一协议 GraphQL 把他们聚合为“超图”，同时通过可视化界面，从“超图”中选择子集 Operation 作为函数签名，并将其编译为 REST-API。开发者通过界面配置，即可开启某 API 的的缓存或实时推送功能。此外，飞布基于 HTTP 协议实现了 HOOKS 机制，方便开发者采用任何喜欢的语言实现自定义逻辑。
+
+# 在线体验
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/fireboomio/fb-init-simple)
 
 # 启动脚本
 
@@ -156,7 +162,7 @@ export default async function mutatingPostResolve(
 
 ## TODO
 
-[ ] 启动脚本支持 linux 和 windows
+[x] 启动脚本支持 linux 和 windows
 
 [ ] 优化目录结构
 
@@ -166,4 +172,4 @@ export default async function mutatingPostResolve(
 
 [ ] 提供前端示例（启动后用来走完整的登录鉴权逻辑）
 
-[ ] gitpod 支持（提供跳转连接，一键运行到 gitpod 中）
+[x] gitpod 支持（提供跳转连接，一键运行到 gitpod 中）

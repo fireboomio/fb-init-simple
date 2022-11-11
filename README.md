@@ -33,11 +33,11 @@
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/fireboomio/fb-init-simple)
 
-# 启动脚本
+[gitpod 介绍](https://juejin.cn/post/6844903773878386701)
 
-## 适用范围
+注意：启动成功后，在 gitpod 底部切换到`PORTS`面板，选择 `9123` 端口打开即可
 
-当前脚本仅适用于 mac 系统，其他系统后续支持
+# 本地启动
 
 ## 安装
 
@@ -93,8 +93,11 @@ cd fireboom-init
 - 数据源
   - GraphQL: https://countries.trevorblades.com
 
+![添加数据源](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/01-datasource.png)
+
 ### 2. 新建 API
 
+![新建API](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/02-api_create.png)
 API 名称：GetCountry
 
 ```gql
@@ -114,6 +117,7 @@ query MyQuery($code: ID!) {
 
 ### 3. 扩展 API
 
+![编写API钩子](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/02-api_hooks.png)
 mutatingPostResolve.ts
 
 ```typescript
@@ -158,7 +162,46 @@ export default async function mutatingPostResolve(
 
 ### 4. 身份验证（待完善提供前端示例）
 
+![开启身份验证](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/02-api_auth.png)
+
 ### 5. 角色鉴权（待完善提供前端示例）
+
+![开启角色鉴权](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/02-api_rbac.png)
+
+### 6.实时 API
+
+![实时API](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/02-api_live.png)
+
+实时推送数据源：https://hasura.io/learn/graphql/graphiql
+
+```
+> graphql 端点:https://hasura.io/learn/graphql
+> 请求头：
+> Authorization:xxxxxxxxx(前往查看↑)
+> content-type:application/json
+```
+
+```graphql
+# 在测试数据源中插入一条todo，可以看到当前端点会实时拿到新数据
+subscription MySubscription {
+  todo_todos(order_by: { id: desc }, limit: 10) {
+    id
+    is_completed
+    is_public
+  }
+}
+
+# 新开页签插入数据
+# mutation {
+#   insert_todos_one(object: {is_public: false, title: "sssss"}) {
+#     id
+#   }
+# }
+```
+
+### 7.其他特性
+
+![API其他特性](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/02-api_feature.png)
 
 ## TODO
 
@@ -173,3 +216,5 @@ export default async function mutatingPostResolve(
 [ ] 提供前端示例（启动后用来走完整的登录鉴权逻辑）
 
 [x] gitpod 支持（提供跳转连接，一键运行到 gitpod 中）
+
+[ ] 内置不同类型的数据库和示例数据

@@ -70,7 +70,8 @@ wundergraph/.vercel
 main.exe
 
 # fireboom-db
-fireBoom-DB
+store/list
+store/object
 
 # bin files
 fireboom

@@ -29,6 +29,7 @@ wundergraph/.wundergraph/wundergraph.operations.ts
 wundergraph/.wundergraph/wundergraph.server.ts
 # WunderGraph build output
 wundergraph/.wundergraph/generated
+wundergraph/.wundergraph/global.config.json
 
 .graphqlconfig
 

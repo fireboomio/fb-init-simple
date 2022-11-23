@@ -75,7 +75,8 @@ wundergraph/.vercel
 
 
 # fireboom-db
-fireBoom-DB
+store/list
+store/object
 
 # bin files
 wunderctl
@@ -83,4 +84,3 @@ fb_test
 fireboom
 fireboom2
 main.exe
-

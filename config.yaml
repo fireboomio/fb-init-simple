@@ -2,7 +2,6 @@ debug: true
 server:
   host: "localhost"
   address: "9123"
-DB: "fireBoom-DB"
 context:
   timeout: 10
 dir:
@@ -37,7 +36,6 @@ dir:
   webStaticFront: "static/front"
   tpldirPathFront: "static/tpl"
   wdgStartDir: "wundergraph/.wundergraph"
-  draftPath: "static/draft"
   HookTypeFilePath: "wundergraph/.wundergraph/generated"
 
 
@@ -64,7 +62,6 @@ file:
   operationsSettingPath:
     globalPrefix: "static/operateapi/global_setting"
   settingPath: "static/setting/setting.json"
-  globalConfigPath: "static/config/global_config.json"
   logPath:
     wdg: "static/log/wdg.txt"
     hook: "static/log/hook.txt"
@@ -75,7 +72,4 @@ file:
     serverFile: "wundergraph/.wundergraph/wundergraph.server.ts"
     operationTPL: "static/tpl/operations.txt"
     operationFile: "wundergraph/.wundergraph/wundergraph.operations.ts"
-  fileType:
-    json: "json"
-    yaml: "yaml"
   wdgGeneratedPostmanPath: "wundergraph/.wundergraph/generated/wundergraph.postman.json"

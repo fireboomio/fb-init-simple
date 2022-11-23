@@ -65,7 +65,7 @@ function init() {
   git reset --hard HEAD
   git pull
   install_dep
-  download_wunderctl
+  # download_wunderctl
   download_fireboom
   download_front
   ./fireboom
@@ -78,10 +78,10 @@ function update() {
 }
 
 function ensure_bin_exist() {
-  type wunderctl
-  if [ ! $? -eq 0 ]; then
-    download_wunderctl
-  fi
+  # type wunderctl
+  # if [ ! $? -eq 0 ]; then
+  #   download_wunderctl
+  # fi
   if [ ! -f "./fireboom" ]; then
     download_fireboom
   fi
@@ -91,8 +91,8 @@ function ensure_bin_exist() {
 }
 
 function version() {
-  echo "wunderctl version:"
-  wunderctl version
+  echo "fb version: 0.1"
+  # wunderctl version
 }
 
 function run() {

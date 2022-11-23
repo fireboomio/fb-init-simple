@@ -65,6 +65,7 @@ file:
   logPath:
     wdg: "static/log/wdg.txt"
     hook: "static/log/hook.txt"
+    question: "static/log/question.txt"
   wunderGraphSyncer:
     configTPL: "static/tpl/config.txt"
     configFile: "wundergraph/.wundergraph/wundergraph.config.ts"

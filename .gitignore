@@ -7,8 +7,9 @@
 main
 *wdg.txt
 
-static/sdk
 generated/
+
+static/sdk
 static/config
 static/draft
 static/front
@@ -19,7 +20,10 @@ static/schema
 static/setting
 static/upload
 sql
+store/
 
+
+wundergraph/.wundergraph/
 wundergraph/.wundergraph/hooks
 wundergraph/.wundergraph/new_hook
 wundergraph/.wundergraph/operations/*
@@ -68,13 +72,16 @@ package-lock.json
 
 # vercel
 wundergraph/.vercel
-main.exe
+
+
 
 # fireboom-db
 store/list
 store/object
 
 # bin files
-fireboom
-fb_test
 wunderctl
+fb_test
+fireboom
+fireboom2
+main.exe

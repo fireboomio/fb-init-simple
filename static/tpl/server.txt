@@ -5,7 +5,7 @@ import type {InternalClient} from './generated/wundergraph.internal.client';
 
 {{.ImportPath}}
 
-export default configureWunderGraphServer<HooksConfig, InternalClient>(() => ({
+export default configureWunderGraphServer<HooksConfig, InternalClient, {}>(() => ({
    {{.HookContent}}
 
 }));

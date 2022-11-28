@@ -9,10 +9,10 @@ main
 
 generated/
 
+front/
 static/sdk
 static/config
 static/draft
-static/front
 static/log
 static/operateapi
 static/prismaEngine

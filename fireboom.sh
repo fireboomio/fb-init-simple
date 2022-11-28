@@ -48,11 +48,11 @@ function download_fireboom() {
 }
 
 function download_front() {
-  curl -o static/dist.tar.gz https://fireboom-test.oss-cn-hangzhou.aliyuncs.com/fireboom/front/dist.tar.gz
-  rm -rf static/front
-  mkdir -p static/front
-  tar -zxf static/dist.tar.gz -C static/front --strip-components 1
-  rm -f static/dist.tar.gz
+  curl -o dist.tar.gz https://fireboom-test.oss-cn-hangzhou.aliyuncs.com/fireboom/front/dist.tar.gz
+  rm -rf front
+  mkdir -p front
+  tar -zxf dist.tar.gz -C front --strip-components 1
+  rm -f dist.tar.gz
 }
 
 function install_dep() {

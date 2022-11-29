@@ -38,7 +38,6 @@ dir:
   wdgStartDir: "wundergraph/.wundergraph"
   HookTypeFilePath: "wundergraph/.wundergraph/generated"
 
-
 file:
   indexDBIDJsonPath: "static/schema/index_db_id.json"
   oauthLinkerPath: "static/oauth/linker.json"
@@ -47,7 +46,7 @@ file:
   oauthLoginConfigPath: "static/oauth/login_config.json"
   oauthOauthConfigPath: "static/oauth/other_config.json"
   moduleSchemaPath: "static/schema/module_schema.prisma"
-  defaultOauthDBPath : "static/oauth_default.db"
+  defaultOauthDBPath: "static/oauth_default.db"
   schemaPath: "schema.prisma"
   database:
     driverName: "sqlite3"
@@ -74,3 +73,4 @@ file:
     operationTPL: "static/tpl/operations.txt"
     operationFile: "wundergraph/.wundergraph/wundergraph.operations.ts"
   wdgGeneratedPostmanPath: "wundergraph/.wundergraph/generated/wundergraph.postman.json"
+  swaggerPath: "wundergraph/.wundergraph/generated/swagger.json"

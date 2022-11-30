@@ -7,7 +7,9 @@
 main
 *wdg.txt
 
+node_modules
 generated/
+log/*.txt
 
 front/
 static/sdk
@@ -22,6 +24,7 @@ static/upload
 sql
 store/
 
+custom-ts
 
 wundergraph/.wundergraph/
 wundergraph/.wundergraph/hooks

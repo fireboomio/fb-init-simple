@@ -77,7 +77,13 @@ cd fireboom-init
 ## 更新
 
 ```shell
+# 同时更新命令行和前端资源
 ./fireboom.sh update
+```
+
+```shell
+# 仅更新前端资源
+./fireboom.sh updatefront
 ```
 
 ## 展示版本

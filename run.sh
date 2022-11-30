@@ -111,6 +111,10 @@ case $1 in
     update
     version
     ;;
+  (updatefront)
+    download_front
+    version
+    ;;
   (version)
     version
     ;;

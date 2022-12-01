@@ -13,12 +13,6 @@ dir:
   sdk:
     src: "static/sdk/src"
     dst: "static/sdk/dst"
-  Hooks:
-    globalPrefix: "wundergraph/.wundergraph/new_hook/global"
-    authGlobalPrefix: "wundergraph/.wundergraph/new_hook/auth"
-    operationsPrefix: "wundergraph/.wundergraph/new_hook/operations"
-    customizePrefix: "wundergraph/.wundergraph/new_hook/customize"
-    newHookPath: "wundergraph/.wundergraph/new_hook"
   uploadPath:
     oasPath: "static/upload/oas"
     sqlitePath: "wundergraph/.wundergraph"

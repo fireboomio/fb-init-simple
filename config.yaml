@@ -25,11 +25,7 @@ dir:
   wunderGraphPath:
     generated: "wundergraph/.wundergraph/generated"
   settingDirPath: "static/setting"
-  globalConfigDirPath: "static/config"
-  wdgLogDirPath: "static/log"
-  webStaticFront: "static/front"
   tpldirPathFront: "static/tpl"
-  wdgStartDir: "wundergraph/.wundergraph"
   HookTypeFilePath: "wundergraph/.wundergraph/generated"
 
 file:
@@ -45,26 +41,19 @@ file:
   database:
     driverName: "sqlite3"
     dataSourceName: "wundergraph/.wundergraph/fire_boom_v3.db"
-  Hooks:
-    suffix: ".ts"
-    configJsonSuffix: "_config.json"
   operateAPIPath:
     suffix: ".graphql"
     switchOff: ".off"
     switchOn: ""
   operationsSettingPath:
     globalPrefix: "static/operateapi/global_setting"
-  settingPath: "static/setting/setting.json"
-  logPath:
-    wdg: "static/log/wdg.txt"
-    hook: "static/log/hook.txt"
-    question: "static/log/question.txt"
-  wunderGraphSyncer:
-    configTPL: "static/tpl/config.txt"
-    configFile: "wundergraph/.wundergraph/wundergraph.config.ts"
-    serverTPL: "static/tpl/server.txt"
-    serverFile: "wundergraph/.wundergraph/wundergraph.server.ts"
-    operationTPL: "static/tpl/operations.txt"
-    operationFile: "wundergraph/.wundergraph/wundergraph.operations.ts"
-  wdgGeneratedPostmanPath: "wundergraph/.wundergraph/generated/wundergraph.postman.json"
-  swaggerPath: "wundergraph/.wundergraph/generated/swagger.json"
+#  settingPath: "static/setting/setting.json"
+#  swaggerPath: "wundergraph/.wundergraph/generated/swagger.json"
+#  wunderGraphSyncer:
+#    configTPL: "static/tpl/config.txt"
+#    configFile: "wundergraph/.wundergraph/wundergraph.config.ts"
+#    serverTPL: "static/tpl/server.txt"
+#    serverFile: "wundergraph/.wundergraph/wundergraph.server.ts"
+#    operationTPL: "static/tpl/operations.txt"
+#    operationFile: "wundergraph/.wundergraph/wundergraph.operations.ts"
+#  wdgGeneratedPostmanPath: "wundergraph/.wundergraph/generated/wundergraph.postman.json"

@@ -1,5 +1,5 @@
-import { configureWunderGraphOperations } from '@wundergraph/sdk';
-import type { OperationsConfiguration } from './generated/wundergraph.operations';
+import { configureWunderGraphOperations } from 'fireboom-wundersdk';
+import type { OperationsConfiguration } from './generated/fireboom.operations';
 
 export default configureWunderGraphOperations<OperationsConfiguration>({
 	{{.OperationConfig}}

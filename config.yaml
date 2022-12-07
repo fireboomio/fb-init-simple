@@ -25,6 +25,7 @@ dir:
   wunderGraphPath:
     generated: "wundergraph/.wundergraph/generated"
   settingDirPath: "static/setting"
+  webStaticFront: "front"
   tpldirPathFront: "static/tpl"
   HookTypeFilePath: "wundergraph/.wundergraph/generated"
 

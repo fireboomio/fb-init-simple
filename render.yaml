@@ -18,7 +18,7 @@ services:
     name: fireboom
     env: node
     region: singapore
-    repo: git@github.com:fireboomio/fb-init-simple.git
+    repo: https://github.com/fireboomio/fb-init-simple.git
     buildCommand: echo ""
     startCommand: ./run.sh
     envVars:

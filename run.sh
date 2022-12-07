@@ -55,16 +55,16 @@ function download_front() {
   rm -f dist.tar.gz
 }
 
-function install_dep() {
-  cd wundergraph
-  install
-  cd ../
-}
+# function install_dep() {
+#   cd wundergraph
+#   install
+#   cd ../
+# }
 
 function init() {
   git reset --hard HEAD
   git pull
-  install_dep
+  # install_dep
   # download_wunderctl
   download_fireboom
   download_front
@@ -96,9 +96,9 @@ function version() {
 }
 
 function run() {
-  if [ ! -d "./wundergraph/node_modules" ]; then
-    install_dep
-  fi
+  # if [ ! -d "./wundergraph/node_modules" ]; then
+  #   install_dep
+  # fi
   ensure_bin_exist
   ./fireboom
 }

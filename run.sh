@@ -37,7 +37,7 @@ function download_wunderctl() {
   bin_url="https://markdown-file-1259215954.cos.ap-nanjing.myqcloud.com/${ctl_filename}"
   curl -o wunderctl $bin_url
   chmod +x wunderctl
-  sudo cp wunderctl /usr/local/bin/
+  cp wunderctl /usr/local/bin/wunderctl
 }
 
 function download_fireboom() {

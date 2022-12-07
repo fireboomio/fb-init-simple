@@ -11,13 +11,6 @@ services:
         fromDatabase:
           name: fireboom
           property: connectionString
-      - key: MINIO_ROOT_PASSWORD
-        fromService:
-          type: web
-          name: minio
-          envVarKey: MINIO_ROOT_PASSWORD
 
 databases:
   - name: fireboom
-    databaseName: fireboom
-    ipAllowList: [] # only allow internal connections

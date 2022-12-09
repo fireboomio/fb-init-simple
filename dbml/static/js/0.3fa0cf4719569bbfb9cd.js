@@ -8313,12 +8313,12 @@
                             return K.a.wrap((function(t) {
                                 for (;;) switch (t.prev = t.next) {
                                     case 0:
-                                        if ((wa = Chargebee.init({
-                                                site: "dbdiagram"
-                                            })) && wa.logout(), e.isLoading = !0, t.prev = 3, !Fe.a.isEmpty(e.subscription)) {
-                                            t.next = 7;
-                                            break
-                                        }
+                                        // if ((wa = Chargebee.init({
+                                        //         site: "dbdiagram"
+                                        //     })) && wa.logout(), e.isLoading = !0, t.prev = 3, !Fe.a.isEmpty(e.subscription)) {
+                                        //     t.next = 7;
+                                        //     break
+                                        // }
                                         return t.next = 7, e.fetchSubscription();
                                     case 7:
                                         return t.next = 9, Qt({
@@ -19382,9 +19382,10 @@
                 Yu = {
                     namespaced: !0,
                     state: {
-                        chargebeeInstance: Chargebee.init({
-                            site: "dbdiagram"
-                        })
+                        // chargebeeInstance: Chargebee.init({
+                        //     site: "dbdiagram"
+                        // })
+                        chargebeeInstance: null
                     },
                     getters: {
                         workspaces: function(e, t, n, r) {

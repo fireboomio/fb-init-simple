@@ -85,7 +85,7 @@ function ensure_bin_exist() {
   if [ ! -f "./fireboom" ]; then
     download_fireboom
   fi
-  if [ ! -d "./static/front" ]; then
+  if [ ! -d "./front" ]; then
     download_front
   fi
 }

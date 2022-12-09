@@ -30,31 +30,9 @@ dir:
   HookTypeFilePath: "wundergraph/.wundergraph/generated"
 
 file:
-  indexDBIDJsonPath: "static/schema/index_db_id.json"
-  oauthLinkerPath: "static/oauth/linker.json"
-  oauthLinkerDefaultPath: "static/oauth/linker_default.json"
-  oauthLoginBrandPath: "static/oauth/login_brand.json"
-  oauthLoginConfigPath: "static/oauth/login_config.json"
-  oauthOauthConfigPath: "static/oauth/other_config.json"
-  moduleSchemaPath: "static/schema/module_schema.prisma"
-  defaultOauthDBPath: "static/oauth_default.db"
-  schemaPath: "schema.prisma"
-  database:
-    driverName: "sqlite3"
-    dataSourceName: "wundergraph/.wundergraph/fire_boom_v3.db"
   operateAPIPath:
     suffix: ".graphql"
     switchOff: ".off"
     switchOn: ""
   operationsSettingPath:
     globalPrefix: "static/operateapi/global_setting"
-#  settingPath: "static/setting/setting.json"
-#  swaggerPath: "wundergraph/.wundergraph/generated/swagger.json"
-#  wunderGraphSyncer:
-#    configTPL: "static/tpl/config.txt"
-#    configFile: "wundergraph/.wundergraph/wundergraph.config.ts"
-#    serverTPL: "static/tpl/server.txt"
-#    serverFile: "wundergraph/.wundergraph/wundergraph.server.ts"
-#    operationTPL: "static/tpl/operations.txt"
-#    operationFile: "wundergraph/.wundergraph/wundergraph.operations.ts"
-#  wdgGeneratedPostmanPath: "wundergraph/.wundergraph/generated/wundergraph.postman.json"

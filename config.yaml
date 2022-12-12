@@ -5,11 +5,6 @@ server:
 context:
   timeout: 10
 dir:
-  oidc:
-    path: "static/oidc/queryschema"
-  schema:
-    path: "static/schema"
-    dbPath: "static/schema/prismaDB"
   sdk:
     src: "static/sdk/src"
     dst: "static/sdk/dst"

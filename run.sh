@@ -100,7 +100,7 @@ function run() {
   #   install_dep
   # fi
   ensure_bin_exist
-  ./fireboom
+  ./fireboom dev
 }
 
 case $1 in

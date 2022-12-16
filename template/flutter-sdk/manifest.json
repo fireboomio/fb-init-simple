@@ -1,0 +1,7 @@
+{
+    "name": "flutter-sdk",
+    "author": "fireboom",
+    "description": "这里是sdk的描述",
+    "basepath": "custom-ts",
+    "swithch": false
+}

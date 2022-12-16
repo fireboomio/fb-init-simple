@@ -1,2 +1,2 @@
 run:
-	./fireboom.sh
+	./run.sh

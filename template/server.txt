@@ -1,6 +1,7 @@
 import {GraphQLObjectType, GraphQLSchema, GraphQLString} from 'graphql';
 import {configureWunderGraphServer} from 'fireboom-wundersdk';
-import type {AuthenticationResponse, HooksConfig} from './generated/fireboom.hooks';
+export { type AuthenticationResponse } from 'fireboom-wundersdk'
+import type {HooksConfig} from './generated/fireboom.hooks';
 import type {InternalClient} from './generated/fireboom.internal.client';
 
 {{.ImportPath}}

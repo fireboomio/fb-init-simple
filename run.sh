@@ -52,6 +52,7 @@ function download_wunderctl() {
 function download_fireboom() {
   get_os_bin_name fireboom
   bin_url="https://fireboom-test.oss-cn-hangzhou.aliyuncs.com/fireboom/bin/${ctl_filename}"
+  echo $bin_url
   curl -o fireboom $bin_url
   chmod +x fireboom
 }

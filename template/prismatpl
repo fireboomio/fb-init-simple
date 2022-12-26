@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import fetch from '@web-std/fetch'
 
 export declare type JSONValue = string | number | boolean | JSONObject | Array<JSONValue>;
 export declare type JSONObject = {

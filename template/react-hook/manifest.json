@@ -1,7 +1,1 @@
-{
-  "name": "react-hook",
-  "author": "fireboom",
-  "description": "这里是sdk的描述",
-  "outputPath": "../../custom-ts/generated1/react-hook",
-  "switch": true
-}
+{"name":"react-hook","author":"fireboom","description":"这里是sdk的描述","outputPath":"../../custom-ts/react-hook","switch":true}

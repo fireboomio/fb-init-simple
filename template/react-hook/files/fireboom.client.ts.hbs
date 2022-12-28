@@ -1,14 +1,15 @@
+import type { {{ modelImports }} } from "./models";
 import type { RequestOptions, UserListener, Response } from "fireboom-wundersdk";
+import type { User, Role } from "./interface";
+import fetch from '@web-std/fetch'
+
 import {
-  Client as WunderGraphClient,
-  ClientConfig,
-  UploadRequestOptions,
-  ClientResponse as Result,
+	Client as WunderGraphClient,
+	ClientConfig,
+	UploadRequestOptions,
+	ClientResponse as Result,
   LogoutOptions
 } from "fireboom-wundersdk/client";
-import type { {{ modelImports }} } from "./models";
-import type { User, Role } from "./interface";
-
 
 export const FIREBOOM_S3_ENABLED = {{hasS3Provider}};
 export const FIREBOOM_AUTH_ENABLED = {{hasAuthProviders}};
@@ -49,6 +50,7 @@ export class Client {
             baseURL,
             applicationHash: "{{ applicationHash }}",
             sdkVersion: "{{ sdkVersion }}",
+            customFetch: fetch,
             ...rest
         });
         this.user = null;

@@ -1,0 +1,7 @@
+import { WebhookConfiguration } from 'fireboom-wundersdk';
+
+export type WebhooksConfig = {
+{{#each webhooks}}
+		{{name}}?: WebhookConfiguration;
+{{/each}}
+}

@@ -78,7 +78,7 @@ function init() {
   # download_wunderctl
   download_fireboom
   download_front
-  ./fireboom
+  ./fireboom dev
 }
 
 function update() {

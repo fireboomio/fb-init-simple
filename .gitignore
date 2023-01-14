@@ -10,6 +10,8 @@ fireboom
 # generated
 generated/
 custom-ts/fireboom.server.ts
+custom-ts/index.html
+.graphqlconfig
 
 # front
 node_modules

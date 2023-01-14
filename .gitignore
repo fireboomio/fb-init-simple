@@ -1,90 +1,22 @@
+# file/ide
 .idea/
 .vscode/
 .history
-./main
-*.out
-*.exe
-main
-*wdg.txt
+.DS_Store
 
-node_modules
+# bin file
+fireboom
+
+# generated
 generated/
-log/*.txt
+custom-ts/fireboom.server.ts
 
-front/
-static/sdk
-static/config
-static/draft
-static/log
-static/operateapi
-static/prismaEngine
-static/schema
-static/setting
-static/upload
-sql
-store/
-
-custom-ts
-
-wundergraph/.wundergraph/
-wundergraph/.wundergraph/hooks
-wundergraph/.wundergraph/new_hook
-wundergraph/.wundergraph/operations/*
-
-wundergraph/.wundergraph/wundergraph.config.ts
-wundergraph/.wundergraph/wundergraph.operations.ts
-wundergraph/.wundergraph/wundergraph.server.ts
-# WunderGraph build output
-wundergraph/.wundergraph/generated
-wundergraph/.wundergraph/global.config.json
-
-.graphqlconfig
-
-# dependencies
-wundergraph/node_modules
-wundergraph/.pnp
-wundergraph/.pnp.js
-
-# testing
-wundergraph/coverage
-
-# next.js
-wundergraph/.next/
-wundergraph/out/
-
-# production
-wundergraph/build
-
-# misc
-wundergraph/.DS_Store
-wundergraph/*.pem
-
-# debug
-wundergraph/npm-debug.log*
-wundergraph/yarn-debug.log*
-wundergraph/yarn-error.log*
-
-# local env files
-wundergraph/.env.local
-wundergraph/.env.development.local
-wundergraph/.env.test.local
-wundergraph/.env.production.local
-
+# front
+node_modules
 yarn.lock
 package-lock.json
+pnpm-lock.yaml
+log/*.txt
 
-# vercel
-wundergraph/.vercel
-
-
-
-# fireboom-db
-store/list
-store/object
-
-# bin files
-wunderctl
-fb_test
-fireboom
-fireboom2
-main.exe
+# wundergraph
+wundergraph/.wundergraph

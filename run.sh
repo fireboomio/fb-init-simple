@@ -2,8 +2,6 @@
 
 # writen by https://github.com/erguotou520
 
-
-
 function get_os_name() {
   if [ "$(uname -s)" == "Darwin" ]; then
     os_name="mac"
@@ -33,20 +31,17 @@ function get_os_bin_name() {
 }
 
 function install() {
-  type yarn
+  type pnpm >/dev/null 2>&1
   if [ $? -eq 0 ]; then
-    yarn install
+    pnpm install
   else
-    npm install
+    type yarn >/dev/null 2>&1
+    if [ $? -eq 0 ]; then
+      yarn install
+    else
+      npm install
+    fi
   fi
-}
-
-function download_wunderctl() {
-  get_os_bin_name wunderctl
-  bin_url="https://markdown-file-1259215954.cos.ap-nanjing.myqcloud.com/${ctl_filename}"
-  curl -o wunderctl $bin_url
-  chmod +x wunderctl
-  cp wunderctl /usr/local/bin/wunderctl
 }
 
 function download_fireboom() {
@@ -57,58 +52,38 @@ function download_fireboom() {
   chmod +x fireboom
 }
 
-function download_front() {
-  curl -o dist.tar.gz https://fireboom-test.oss-cn-hangzhou.aliyuncs.com/fireboom/front/dist.tar.gz
-  rm -rf front
-  mkdir -p front
-  tar -zxf dist.tar.gz -C front --strip-components 1
-  rm -f dist.tar.gz
+function install_dep() {
+  cd custom-ts
+  install
+  cd ../
 }
-
-# function install_dep() {
-#   cd wundergraph
-#   install
-#   cd ../
-# }
 
 function init() {
   git reset --hard HEAD
   git pull
-  # install_dep
-  # download_wunderctl
   download_fireboom
-  download_front
+  install_dep
   ./fireboom dev
 }
 
 function update() {
-#   download_wunderctl
   download_fireboom
-  download_front
 }
 
 function ensure_bin_exist() {
-  # type wunderctl
-  # if [ ! $? -eq 0 ]; then
-  #   download_wunderctl
-  # fi
   if [ ! -f "./fireboom" ]; then
     download_fireboom
   fi
-  if [ ! -d "./front" ]; then
-    download_front
-  fi
 }
 
-function version() {
-  echo "fb version: 0.1"
-  # wunderctl version
-}
+# function version() {
+#   echo "fb version: 0.1"
+# }
 
 function run() {
-  # if [ ! -d "./wundergraph/node_modules" ]; then
-  #   install_dep
-  # fi
+  if [ ! -d "custom-ts/node_modules" ]; then
+    install_dep
+  fi
   ensure_bin_exist
   ./fireboom dev
 }
@@ -119,15 +94,11 @@ case $1 in
     ;;
   (update)
     update
-    version
+    # version
     ;;
-  (updatefront)
-    download_front
-    version
-    ;;
-  (version)
-    version
-    ;;
+  # (version)
+  #   version
+  #   ;;
   (*)
     run
     ;;

@@ -7,7 +7,7 @@ function get_os_name() {
     os_name="mac"
   elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then   
     os_name="linux"
-  elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then    
+  elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then    
     os_name="windows"
   fi
 }

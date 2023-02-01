@@ -44,14 +44,14 @@
 ```shell
 git clone https://github.com/fireboomio/fb-init-simple.git
 cd fireboom-init
-./fireboom.sh init
+./run.sh init
 ```
 
 ## 运行
 
 ```shell
-./fireboom.sh
-# or run "./fireboom.sh init" to re-init
+./run.sh
+# or run "./run.sh init" to re-init
 ```
 
 启动成功日志：
@@ -78,18 +78,20 @@ cd fireboom-init
 
 ```shell
 # 同时更新命令行和前端资源
-./fireboom.sh update
+./run.sh update
 ```
 
-```shell
-# 仅更新前端资源
-./fireboom.sh updatefront
-```
-
-## 展示版本
+## 钩子服务
 
 ```shell
-./fireboom.sh version
+# 依赖安装
+./hook.sh install
+
+# 开发时运行
+./hook.sh dev
+
+# 生产时运行
+./hook.sh start
 ```
 
 ## 快速使用

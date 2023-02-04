@@ -1,7 +1,7 @@
-import { Client } from "./fireboom.client";
-import type { UserListener } from "fireboom-wundersdk";
-import type { User } from "./interface";
+import type { UserListener } from "fireboom-wundersdk/server";
 import React, { createContext, FunctionComponent, useMemo, useEffect, useState, Dispatch, SetStateAction } from "react";
+import { Client } from "./fireboom.client";
+import type { User } from "./interface";
 
 export interface Config {
     client: Client;

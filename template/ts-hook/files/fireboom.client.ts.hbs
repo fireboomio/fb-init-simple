@@ -1,5 +1,5 @@
 import type { {{ modelImports }} } from "./models";
-import type { RequestOptions, UserListener, Response } from "fireboom-wundersdk";
+import type { RequestOptions, UserListener, Response } from "fireboom-wundersdk/server";
 import type { User, Role } from "./interface";
 import fetch from '@web-std/fetch'
 
@@ -8,7 +8,7 @@ import {
 	ClientConfig,
 	UploadRequestOptions,
 	ClientResponse as Result,
-  LogoutOptions
+    LogoutOptions
 } from "fireboom-wundersdk/client";
 
 export const FIREBOOM_S3_ENABLED = {{hasS3Provider}};

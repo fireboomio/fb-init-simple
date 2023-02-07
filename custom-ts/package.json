@@ -14,9 +14,9 @@
   },
   "name": "fireboom-hooks",
   "scripts": {
-    "dev": "cross-env WG_CLI_LOG_PRETTY=true START_HOOKS_SERVER=true WG_ABS_DIR=. ts-node fireboom.server.ts --files",
+    "dev": "cross-env WG_CLI_LOG_PRETTY=true START_HOOKS_SERVER=true WG_DIR_ABS=. ts-node fireboom.server.ts --files",
     "build": "tsc",
-    "start": "cross-env START_HOOKS_SERVER=true WG_ABS_DIR=. node fireboom.server.js"
+    "start": "cross-env START_HOOKS_SERVER=true WG_DIR_ABS=. node fireboom.server.js"
   },
   "stackblitz": {
     "startCommand": "npm run dev"

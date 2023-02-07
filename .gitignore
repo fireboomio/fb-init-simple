@@ -21,4 +21,5 @@ pnpm-lock.yaml
 log/*.txt
 
 # wundergraph
-wundergraph/.wundergraph
+wundergraph/.wundergraph/*
+!wundergraph/.wundergraph/*.db

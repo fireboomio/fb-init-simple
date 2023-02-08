@@ -1,6 +1,6 @@
 import {useCallback, useContext, useEffect, useMemo, useState} from "react";
+import { RequestOptions, MutateRequestOptions, SubscriptionRequestOptions, Response} from "fireboom-wundersdk/server"
 import {WunderGraphContext} from "./provider";
-import { RequestOptions, MutateRequestOptions, SubscriptionRequestOptions, Response} from "fireboom-wundersdk"
 {{#if hasImports}}import { {{imports}} } from "./models";{{/if}}
 
 export const useFireboom = () => {

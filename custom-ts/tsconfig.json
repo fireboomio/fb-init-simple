@@ -22,5 +22,5 @@
       "generated/*": ["./generated/*"]
     }
   },
-  "include": ["*.ts"]
+  "include": ["**/*.ts"]
 }

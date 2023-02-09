@@ -99,6 +99,7 @@ export interface HookRequestWithInput<Input> extends HookRequest {
 		input: Input;
 }
 
+// @ts-ignore
 export interface HooksConfig extends HooksConfiguration<Queries, Mutations, Subscriptions, User, InternalClient> {
     global?: GlobalHooksConfig;
     authentication?: {

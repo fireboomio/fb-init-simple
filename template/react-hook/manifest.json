@@ -3,5 +3,5 @@
   "author": "fireboom",
   "description": "这里是sdk的描述",
   "outputPath": "../../custom-ts/generated/react-hook",
-  "switch": true
+  "switch": false
 }

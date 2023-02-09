@@ -12,13 +12,14 @@
     "fastify": "^4.9.2",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.2",
 		"tsconfig-paths": "^4.1.2"
   },
   "name": "fireboom-hooks",
   "scripts": {
     "dev": "cross-env WG_CLI_LOG_PRETTY=true START_HOOKS_SERVER=true WG_DIR_ABS=. ts-node fireboom.server.ts --files",
     "watch": "nodemon",
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "start": "cross-env START_HOOKS_SERVER=true WG_DIR_ABS=. node fireboom.server.js"
   },
   "stackblitz": {

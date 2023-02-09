@@ -156,6 +156,7 @@ export class Client {
 		{{#if hasS3Provider}}
     public uploadFiles = async (config: UploadConfig): Promise<Response<UploadResponse[]>> => {
       try {
+        // @ts-ignore
         const result = await this._client.uploadFiles(config);
         return {
           status: "ok",

@@ -20,6 +20,7 @@
     "dev": "cross-env WG_CLI_LOG_PRETTY=true START_HOOKS_SERVER=true WG_DIR_ABS=. ts-node fireboom.server.ts --files",
     "watch": "nodemon",
     "build": "tsc && tsc-alias",
+    "clear": "rm -rf **/*.js",
     "start": "cross-env START_HOOKS_SERVER=true WG_DIR_ABS=. node fireboom.server.js"
   },
   "stackblitz": {

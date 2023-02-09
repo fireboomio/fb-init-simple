@@ -10,14 +10,14 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "fastify": "^4.9.2",
+    "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
-    "ts-node-dev": "^2.0.0",
 		"tsconfig-paths": "^4.1.2"
   },
   "name": "fireboom-hooks",
   "scripts": {
     "dev": "cross-env WG_CLI_LOG_PRETTY=true START_HOOKS_SERVER=true WG_DIR_ABS=. ts-node fireboom.server.ts --files",
-    "dev:watch": "cross-env WG_CLI_LOG_PRETTY=true START_HOOKS_SERVER=true WG_DIR_ABS=. ts-node-dev fireboom.server.ts --files",
+    "watch": "nodemon",
     "build": "tsc",
     "start": "cross-env START_HOOKS_SERVER=true WG_DIR_ABS=. node fireboom.server.js"
   },

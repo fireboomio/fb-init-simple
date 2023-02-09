@@ -9,8 +9,8 @@ export default {
     poolName = options.poolName
     authing = new Authing(options)
     const [err, res] = await authing.getLoginState()
-    if (res && res.id_token) {
-      setAuthHeader(`Bearer ${res.id_token}`)
+    if (res && res.access_token) {
+      setAuthHeader(`Bearer ${res.access_token}`)
       return true
     }
   },
@@ -34,8 +34,8 @@ export default {
         scope: 'openid profile offline_access'
       }
     })
-    if (res && res.id_token) {
-      setAuthHeader(`Bearer ${res.id_token}`)
+    if (res && res.access_token) {
+      setAuthHeader(`Bearer ${res.access_token}`)
       return true
     }
   },

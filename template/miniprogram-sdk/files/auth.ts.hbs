@@ -3,15 +3,24 @@ import { setAuthHeader } from './request'
 
 let authing: Authing | null = null
 let poolName: string | null = null
+let authAppId: string | null = null
 
 export default {
   async init(options: AuthingOptions & { poolName: string }) {
     poolName = options.poolName
+    authAppId = options.appId
     authing = new Authing(options)
     const [err, res] = await authing.getLoginState()
     if (res && res.access_token) {
       setAuthHeader(`Bearer ${res.access_token}`)
       return true
+    } else {
+      try {
+        wx.removeStorageSync(`authing:${authAppId}:wx-login-code`)
+      } catch (e) {
+        console.error(e)
+      }
+      authing.logout()
     }
   },
   async login() {

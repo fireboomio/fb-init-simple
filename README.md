@@ -42,43 +42,30 @@
 ## 安装
 
 ```shell
-git clone https://github.com/fireboomio/fb-init-simple.git
-cd fireboom-init
-./run.sh init
+curl -fsSL https://www.fireboom.io/install.sh | bash -s my-fireboom-project
 ```
 
 ## 运行
 
 ```shell
-./run.sh
-# or run "./run.sh init" to re-init
+./fireboom dev
 ```
 
 启动成功日志：
 
 ```sh
-⇨ http server started on [::]:9123
+Web server started on http://localhost:9123
 ```
 
 打开控制面板
 
 [http://localhost:9123](http://localhost:9123)
 
-## 调试钩子
-
-1. 前往配置修改钩子的启动模式为默认不启动（TODO:待实现该配置）
-
-2. 打开./wundergraph/package.json 文件
-
-3. 鼠标悬浮在 scripts.hook 上，点击`调试脚本`
-
-4. 前往 wundergraph/.wundergraph/generated/bundle/server.js 中打断点
-
 ## 更新
 
 ```shell
 # 同时更新命令行和前端资源
-./run.sh update
+curl -fsSL https://www.fireboom.io/update.sh | bash
 ```
 
 ## 钩子服务

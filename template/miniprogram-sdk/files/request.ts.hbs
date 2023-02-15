@@ -1,7 +1,7 @@
 let requestFun = getFunction('request')
 let uploadFileFun = getFunction('uploadFile')
 
-let authHeader: string | null = null
+let authHeader: null | string = null
 let baseUrl = ''
 function getFunction(fun) {
   // @ts-ignore
@@ -37,7 +37,14 @@ export function buildQuery<Output>(url): () => Promise<Output>
 
 export function buildQuery(url) {
   return function (data) {
-    const search = Object.keys(data || {}).map(key => `${key}=${encodeURIComponent(data[key])}`).join('&')
+    const search = Object.keys(data || {}).map(key => {
+      const value = data[key]
+      if (value instanceof Array) {
+        return value.map(x => `${key}[]=${encodeURIComponent(x)}`).join('&')
+      } else {
+        return `${key}=${encodeURIComponent(data[key])}`
+      }
+    }).join('&')
     const header: Record<string, string> = {}
     if (authHeader) {
       header.Authorization = authHeader

@@ -1,7 +1,0 @@
-{
-  "name": "miniprogram-sdk",
-  "author": "fireboom",
-  "description": "这里是sdk的描述",
-  "outputPath": "../../../miniapp/sdk",
-  "switch": true
-}

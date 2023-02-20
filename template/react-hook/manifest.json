@@ -1,7 +1,0 @@
-{
-  "name": "React hooks",
-  "author": "fireboom",
-  "description": "这里是sdk的描述",
-  "outputPath": "../../custom-ts/generated/react-hook",
-  "switch": false
-}

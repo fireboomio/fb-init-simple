@@ -1,7 +1,0 @@
-{
-  "name": "ts-hook",
-  "author": "fireboom",
-  "description": "这里是sdk的描述",
-  "outputPath": "../../custom-ts/generated",
-  "switch": true
-}

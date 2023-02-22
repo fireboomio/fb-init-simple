@@ -1,0 +1,9 @@
+tasks:
+  - init: install fireboom
+    command: curl -fsSL https://www.fireboom.io/update-test.sh | bash
+  - init: start fireboom
+    command: ./fireboom dev
+ports:
+  - port: 9123
+    onOpen: open-preview
+  - port: 9991

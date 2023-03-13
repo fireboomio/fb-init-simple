@@ -29,27 +29,21 @@
 
 针对上述问题，飞布采用完全不同的思路。飞布采用声明式开发方式，它以 API 为中心，将所有数据抽象为 API，包括 REST API，GraphQL API ，数据库甚至消息队列等，通过统一协议 GraphQL 把他们聚合为“超图”，同时通过可视化界面，从“超图”中选择子集 Operation 作为函数签名，并将其编译为 REST-API。开发者通过界面配置，即可开启某 API 的的缓存或实时推送功能。此外，飞布基于 HTTP 协议实现了 HOOKS 机制，方便开发者采用任何喜欢的语言实现自定义逻辑。
 
-# 在线体验
+# 运行
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/fireboomio/fb-init-simple)
-
-[gitpod 介绍](https://juejin.cn/post/6844903773878386701)
-
-注意：启动成功后，在 gitpod 底部切换到`PORTS`面板，选择 `9123` 端口打开即可
-
-# 本地启动
-
-## 安装
-
-```shell
-curl -fsSL https://www.fireboom.io/install.sh | bash -s my-fireboom-project
-```
-
-## 运行
+如果你是通过命令行初始化的项目，那么就直接执行下面的命令行启动
 
 ```shell
 ./fireboom dev
 ```
+
+如果项目根目录中没有`fireboom`二进制文件，那么使用下面的命令行下载
+
+```shell
+curl -fsSL https://www.fireboom.io/update.sh | bash
+```
+
+然后再执行上面的启动脚本。
 
 启动成功日志：
 
@@ -81,135 +75,6 @@ curl -fsSL https://www.fireboom.io/update.sh | bash
 ./hook.sh start
 ```
 
-## 快速使用
+# 文档
 
-### 1. 设置数据源
-
-- 数据源
-  - GraphQL: https://countries.trevorblades.com
-
-![添加数据源](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/01-datasource.png)
-
-### 2. 新建 API
-
-![新建API](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/02-api_create.png)
-API 名称：GetCountry
-
-```gql
-query MyQuery($code: ID!) {
-  country: countries_country(code: $code) {
-    capital
-    code
-    currency
-    emoji
-    emojiU
-    native
-    phone
-    name
-  }
-}
-```
-
-### 3. 扩展 API
-
-![编写API钩子](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/02-api_hooks.png)
-mutatingPostResolve.ts
-
-```typescript
-import type { Context } from "@wundergraph/sdk";
-import type { User } from "generated/wundergraph.server";
-import type { InternalClient } from "generated/wundergraph.internal.client";
-import { InjectedGetCountryInput, GetCountryResponse } from "generated/models";
-
-// 在左侧引入当前包
-import axios from "axios";
-
-export default async function mutatingPostResolve(
-  ctx: Context<User, InternalClient>,
-  input: InjectedGetCountryInput,
-  response: GetCountryResponse
-): Promise<GetCountryResponse> {
-  // TODO: 在此处添加代码
-  var country = response.data?.country;
-  if (country) {
-    country.phone = "fireboom/test"; //这里可以修改返回值
-  }
-  ctx.log.info("test");
-
-  //触发一个post请求，给企业机器人发送一个消息
-  var res = await axios.post(
-    "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=69aa957f-7c05-49b3-9e9d-8859a53ea692",
-    {
-      msgtype: "markdown",
-      markdown: {
-        content: `<font color="warning">${
-          ctx.clientRequest.method
-        }</font>/n输入：${JSON.stringify(input)}/n响应：${JSON.stringify(
-          response
-        )}`,
-      },
-    }
-  );
-  ctx.log.info("mutatingPostResolve SUCCESS:", res.data);
-  return response;
-}
-```
-
-### 4. 身份验证（待完善提供前端示例）
-
-![开启身份验证](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/02-api_auth.png)
-
-### 5. 角色鉴权（待完善提供前端示例）
-
-![开启角色鉴权](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/02-api_rbac.png)
-
-### 6.实时 API
-
-![实时API](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/02-api_live.png)
-
-实时推送数据源：https://hasura.io/learn/graphql/graphiql
-
-```
-> graphql 端点:https://hasura.io/learn/graphql
-> 请求头：
-> Authorization:xxxxxxxxx(前往查看↑)
-> content-type:application/json
-```
-
-```graphql
-# 在测试数据源中插入一条todo，可以看到当前端点会实时拿到新数据
-subscription MySubscription {
-  todo_todos(order_by: { id: desc }, limit: 10) {
-    id
-    is_completed
-    is_public
-  }
-}
-
-# 新开页签插入数据
-# mutation {
-#   insert_todos_one(object: {is_public: false, title: "sssss"}) {
-#     id
-#   }
-# }
-```
-
-### 7.其他特性
-
-![API其他特性](https://fireboom.oss-cn-hangzhou.aliyuncs.com/img/02-api_feature.png)
-
-## TODO
-
-[x] 启动脚本支持 linux 和 windows
-
-[ ] 优化目录结构
-
-    [] OIDC 相关的目录整理在一起（如 oauth_default.db 和 oidc、oauth 等）
-
-    [] fireBooom-DB和static/config以及static/operateapi等合并在一起？
-
-[ ] 提供前端示例（启动后用来走完整的登录鉴权逻辑）
-
-[x] gitpod 支持（提供跳转连接，一键运行到 gitpod 中）
-
-[ ] 内置不同类型的数据库和示例数据
+更多文档请访问我们的[文档中心](https://ansons-organization.gitbook.io/)

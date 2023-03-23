@@ -20,9 +20,9 @@
   "scripts": {
     "dev": "npm run build-operations && cross-env WG_CLI_LOG_PRETTY=true START_HOOKS_SERVER=true WG_DIR_ABS=. ts-node fireboom.server.ts --files",
     "watch": "nodemon",
-    "build-operations": "ts-node scripts/buildOperations.ts && tsc --project operations.tsconfig.json",
-    "build": "tsc && tsc-alias",
-    "clear": "rm -rf **/*.js",
+    "build-operations": "ts-node scripts/buildOperations.ts && tsc --project operations.tsconfig.json && tsc-alias -p operations.tsconfig.json",
+    "build": "npm run build-operations && tsc && tsc-alias",
+    "clear": "rm -rf **/*.js && rm -rf **/*.d.ts",
     "start": "cross-env NODE_ENV=production START_HOOKS_SERVER=true WG_DIR_ABS=. node fireboom.server.js"
   },
   "stackblitz": {

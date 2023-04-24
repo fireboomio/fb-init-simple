@@ -1,4 +1,5 @@
-import { writeFile, readdir, stat, mkdir,  } from 'node:fs/promises'
+import { writeFile, readdir, stat, mkdir } from 'node:fs/promises'
+import { existsSync } from 'node:fs'
 import { join, parse } from 'node:path'
 import { NodeJSOperation, OperationTypes } from 'fireboom-wundersdk/dist/operations/operations'
 import zodToJsonSchema from "zod-to-json-schema"

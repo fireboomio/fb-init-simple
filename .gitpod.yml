@@ -2,9 +2,6 @@ tasks:
   - name: fireboom
     init: curl -fsSL https://www.fireboom.io/update.sh | bash
     command: ./fireboom dev
-  # - name: hook
-  #   init: npm install --prefix custom-ts
-  #   command: npm run watch --prefix custom-ts
 ports:
   - port: 9123
     onOpen: open-preview

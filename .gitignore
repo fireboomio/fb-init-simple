@@ -9,16 +9,14 @@ fireboom
 
 # generated
 generated/
-custom-ts/fireboom.server.ts
-custom-ts/index.html
 .graphqlconfig
+.process/
 
-# front
+# hook
 node_modules
 yarn.lock
 package-lock.json
 pnpm-lock.yaml
-log/*.txt
 
-.process/
-.garbage/
+# log
+log/*

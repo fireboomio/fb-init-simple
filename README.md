@@ -64,15 +64,19 @@ curl -fsSL https://www.fireboom.io/update.sh | bash
 
 ## 钩子服务
 
+下面以`ts`语言钩子为例，如果是`golang`语言则将`custom-ts`改为`custom-go`
+
 ```shell
 # 依赖安装
-./hook.sh install
+./custom-ts/scripts/install.sh
 
 # 开发时运行
-./hook.sh dev
+./custom-ts/scripts/run-dev.sh
 
 # 生产时运行
-./hook.sh start
+# 先打包（如果没有该文件则跳过 build）
+./custom-ts/scripts/run-build.sh
+./custom-ts/scripts/run-prod.sh
 ```
 
 # 文档

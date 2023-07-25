@@ -51,7 +51,7 @@ curl -fsSL https://www.fireboom.io/update.sh | bash
 Web server started on http://localhost:9123
 ```
 
-打开控制面板
+打开 Fireboom 控制台页面
 
 [http://localhost:9123](http://localhost:9123)
 
@@ -64,7 +64,7 @@ curl -fsSL https://www.fireboom.io/update.sh | bash
 
 ## 钩子服务
 
-下面以`ts`语言钩子为例，如果是`golang`语言则将`custom-ts`改为`custom-go`
+下面以`ts`语言钩子为例，如果是`golang`语言则将`custom-ts`改为`custom-go`。先在 http://localhost:9123 页面上点击“钩子模板”，点击“浏览钩子市场”，选择“NodeJs server”点击下载，下载完成后使用下面命令启动
 
 ```shell
 # 依赖安装
